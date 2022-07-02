@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+../FundamentosJS-FIN/
+../FundamentosJS/
+../citas-react/
