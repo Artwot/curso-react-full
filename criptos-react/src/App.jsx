@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
 
-import BgImage from './assets/images/bg.png';
 import Form from './components/Form';
+import BgImage from './assets/images/bg.png';
 
 function App() {
+  // Styled Components
   const Container = styled.main`
     max-width: 1024px;
     margin: 0 auto;
@@ -30,6 +31,7 @@ function App() {
     margin: 100px auto 0 auto;
     display: block;
   `;
+  // End Styled Components
 
   return (
     <Container>

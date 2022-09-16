@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import { useSelectCurrency } from '../hooks/useSelectCurrency';
+
+// Styled Components
 const FormContainer = styled.div`
   height: auto;
   width: 80%;
@@ -14,7 +17,9 @@ const FormContainer = styled.div`
 `;
 
 const InputSubmit = styled.input`
-  padding: 24px 32px;
+  margin: 0 auto;
+  display: block;
+  padding: 16px 32px;
   border: 0;
   text-decoration: none;
   border-radius: 15px;
@@ -27,17 +32,27 @@ const InputSubmit = styled.input`
   cursor: pointer;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
-  margin: 0 auto;
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
 `;
+// End Styled Components
+
+const currencies = [
+  { id: 'USD', name: 'Dólar Estadounidense' },
+  { id: 'MXN', name: 'Peso Mexicano' },
+  { id: 'EUR', name: 'Euro' },
+  { id: 'GBP', name: 'Libra Esterlina' },
+];
+
+const [SelectCurrency] = useSelectCurrency('Seleccionar moneda', currencies);
 
 const Form = () => {
   return (
     <FormContainer>
       <form>
+        <SelectCurrency />
         <InputSubmit type='submit' value='Cotizar' />
       </form>
     </FormContainer>
