@@ -1,4 +1,11 @@
 body {
-  background-color: #0d2235;
+  background: #160652; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #160652,
+    #450e83
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #160652, #450e83);
+
   font-family: 'Lato', sans-serif;
 }

@@ -1,34 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from 'react';
+import styled from '@emotion/styled';
+
+import BgImage from './assets/images/bg.png';
+import Form from './components/Form';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const Container = styled.main`
+    max-width: 1024px;
+    margin: 0 auto;
+    width: 90%;
+
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  `;
+
+  const Heading = styled.h1`
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 900;
+  `;
+
+  const Image = styled.img`
+    max-width: 400px;
+    width: 80%;
+    margin: 100px auto 0 auto;
+    display: block;
+  `;
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Container>
+      <Heading>Cotiza Criptomonedas al instante</Heading>
+      <div style={{ position: 'relative' }}>
+        <Image src={BgImage} />
+        <Form />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    </Container>
+  );
 }
 
-export default App
+export default App;
