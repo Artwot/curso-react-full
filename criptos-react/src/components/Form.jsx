@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { useSelectCurrency } from '../hooks/useSelectCurrency';
+import { currencies } from '../data/currencies.js';
 
 // Styled Components
 const FormContainer = styled.div`
@@ -38,13 +39,6 @@ const InputSubmit = styled.input`
   }
 `;
 // End Styled Components
-
-const currencies = [
-  { id: 'USD', name: 'Dólar Estadounidense' },
-  { id: 'MXN', name: 'Peso Mexicano' },
-  { id: 'EUR', name: 'Euro' },
-  { id: 'GBP', name: 'Libra Esterlina' },
-];
 
 const [SelectCurrency] = useSelectCurrency('Seleccionar moneda', currencies);
 
