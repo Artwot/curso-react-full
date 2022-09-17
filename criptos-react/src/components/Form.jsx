@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useEffect } from 'react';
 
 import { useSelectCurrency } from '../hooks/useSelectCurrency';
 import { currencies } from '../data/currencies.js';
@@ -40,9 +41,22 @@ const InputSubmit = styled.input`
 `;
 // End Styled Components
 
-const [SelectCurrency] = useSelectCurrency('Seleccionar moneda', currencies);
-
 const Form = () => {
+  // Fetch the data from the API
+  useEffect(() => {
+    const fetchData = async () => {
+      const url =
+        'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
+      const response = await fetch(url);
+      const result = await response.json();
+
+      console.log(result.Data);
+    };
+
+    fetchData();
+  }, []);
+
+  const [SelectCurrency] = useSelectCurrency('Seleccionar moneda', currencies);
   return (
     <FormContainer>
       <form>
