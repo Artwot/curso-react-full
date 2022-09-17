@@ -28,7 +28,7 @@ function App() {
   const Image = styled.img`
     max-width: 400px;
     width: 80%;
-    margin: 100px auto 0 auto;
+    margin: 0 auto;
     display: block;
   `;
   // End Styled Components

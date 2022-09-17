@@ -18,7 +18,7 @@ const FormContainer = styled.div`
 `;
 
 const InputSubmit = styled.input`
-  margin: 0 auto;
+  margin: 1rem auto;
   display: block;
   padding: 16px 32px;
   border: 0;
